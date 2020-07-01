@@ -1,7 +1,4 @@
-/* ===================================================================
- * Infinity - Main JS
- *
- * ------------------------------------------------------------------- */ 
+ 
 
 (function($) {
 
@@ -16,14 +13,12 @@
 	$WIN = $(window);
 	
 
-   // Add the User Agent to the <html>
-   // will be used for IE10 detection (Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0))
+   
 	var doc = document.documentElement;
 	doc.setAttribute('data-useragent', navigator.userAgent);
 
 	
-	/* Preloader 
-	 * -------------------------------------------------- */
+	
 	var ssPreloader = function() {
 
 		$WIN.on('load', function() {	
@@ -42,15 +37,13 @@
 	}; 
 
 
-	/* FitVids
-	------------------------------------------------------ */ 
+	
 	var ssFitVids = function() {
 		$(".fluid-video-wrapper").fitVids();
 	}; 
 
 
-	/*	Masonry
-	------------------------------------------------------ */
+	
 	var ssMasonryFolio = function() {
 
 		var containerBricks = $('.bricks-wrapper');
@@ -64,8 +57,7 @@
 	};
 
 
-	/*	Light Gallery
-	------------------------------------------------------- */
+	
 	var ssLightGallery = function() {
 
 		$('#folio-wrap').lightGallery({  
@@ -76,8 +68,7 @@
 	};
 
 
-	/* Flexslider
-  	* ------------------------------------------------------ */
+	
   	var ssFlexSlider = function() {
 
   		$WIN.on('load', function() {
@@ -100,8 +91,7 @@
   	};
 
 
-  	/* Carousel
-	* ------------------------------------------------------ */
+  	
 	var ssOwlCarousel = function() {
 
 		$(".owl-carousel").owlCarousel({		
@@ -132,8 +122,7 @@
   	
 
 
-  	/* Menu on Scrolldown
-	 * ------------------------------------------------------ */
+  	
 	var ssMenuOnScrolldown = function() {
 
 		var menuTrigger = $('#header-menu-trigger');
@@ -151,8 +140,7 @@
 	};
 
 	
-  	/* OffCanvas Menu
-	 * ------------------------------------------------------ */
+  	
    var ssOffCanvas = function() {
 
 	       var menuTrigger = $('#header-menu-trigger'),
@@ -161,20 +149,20 @@
 	       siteBody        = $('body'),
 	       mainContents    = $('section, footer');
 
-		// open-close menu by clicking on the menu icon
+		
 		menuTrigger.on('click', function(e){
 			e.preventDefault();
 			menuTrigger.toggleClass('is-clicked');
 			siteBody.toggleClass('menu-is-open');
 		});
 
-		// close menu by clicking the close button
+		
 		closeButton.on('click', function(e){
 			e.preventDefault();
 			menuTrigger.trigger('click');	
 		});
 
-		// close menu clicking outside the menu itself
+		
 		siteBody.on('click', function(e){		
 			if( !$(e.target).is('#menu-nav-wrap, #header-menu-trigger, #header-menu-trigger span') ) {
 				menuTrigger.removeClass('is-clicked');
@@ -185,8 +173,7 @@
    };
 
 
-  /* Smooth Scrolling
-	* ------------------------------------------------------ */
+  
 	var ssSmoothScroll = function() {
 
 		$('.smoothscroll').on('click', function (e) {
@@ -200,7 +187,7 @@
 	       	'scrollTop': $target.offset().top
 	      }, cfg.scrollDuration, 'swing').promise().done(function () {
 
-	      	// check if menu is open
+	      	
 	      	if ($('body').hasClass('menu-is-open')) {
 					$('#header-menu-trigger').trigger('click');
 				}
@@ -212,15 +199,13 @@
 	};
 
 
-  /* Placeholder Plugin Settings
-	* ------------------------------------------------------ */
+
 	var ssPlaceholder = function() {
 		$('input, textarea, select').placeholder();  
 	};
 
 
-  	/* Alert Boxes
-  	------------------------------------------------------- */
+  	
   	var ssAlertBoxes = function() {
 
   		$('.alert-box').on('click', '.close', function() {
@@ -230,8 +215,7 @@
   	};	  	
 	
 
-  /* Animations
-	* ------------------------------------------------------- */
+  
 	var ssAnimations = function() {
 
 		if (!$("html").hasClass('no-cssanimations')) {
@@ -271,8 +255,7 @@
 	};
 	
 
-  /* Intro Animation
-	* ------------------------------------------------------- */
+ 
 	var ssIntroAnimation = function() {
 
 		$WIN.on('load', function() {
@@ -298,14 +281,13 @@
 	};
 
 
-  /* Contact Form
-   * ------------------------------------------------------ */
+  
    var ssContactForm = function() {   	
 
-   	/* local validation */   	
+   		
 		$('#contactForm').validate({
 
-			/* submit via ajax */
+			
 			submitHandler: function(form) {				
 				var sLoader = $('#submit-loader');			
 
@@ -318,14 +300,14 @@
 			      	sLoader.fadeIn(); 
 			      },
 			      success: function(msg) {
-		            // Message was sent
+		           
 		            if (msg == 'OK') {
 		            	sLoader.fadeOut(); 
 		               $('#message-warning').hide();
 		               $('#contactForm').fadeOut();
 		               $('#message-success').fadeIn();   
 		            }
-		            // There was an error
+		            
 		            else {
 		            	sLoader.fadeOut(); 
 		               $('#message-warning').html(msg);
@@ -344,8 +326,7 @@
    };	
 
 
-  /* AjaxChimp
-	* ------------------------------------------------------ */
+  
 	var ssAjaxChimp = function() {
 
 		$('#mc-form').ajaxChimp({
@@ -377,8 +358,7 @@
 	};
 
  
-  /* Back to Top
-	* ------------------------------------------------------ */
+  
 	var ssBackToTop = function() {
 
 		var pxShow  = 500,         // height on which the button will show
@@ -387,7 +367,7 @@
 		scrollSpeed = 300,         // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
 		goTopButton = $("#go-top")
 
-		// Show or hide the sticky footer button
+		
 		$(window).on('scroll', function() {
 			if ($(window).scrollTop() >= pxShow) {
 				goTopButton.fadeIn(fadeInTime);
@@ -399,8 +379,7 @@
 
 
   
-  /* Initialize
-	* ------------------------------------------------------ */
+ 
 	(function ssInit() {
 
 		ssPreloader();
