@@ -2280,35 +2280,3 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
     bottom: 0;
     right: 0;
   }
-
-  .footer-main {
-    text-align: center;
-  }
-  .footer-main .row {
-    max-width: 480px;
-  }
-  .footer-main [class*="col-"] {
-    margin-bottom: 3.6rem;
-  }
-
-  footer h4.h05 {
-    padding-bottom: 3rem;
-    margin-bottom: 3rem;
-  }
-
-  footer h4.h05::after {
-    left: 50%;
-    margin-left: -50px;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .footer-bottom {
-    padding-bottom: .6rem;
-  }
-  .footer-bottom .copyright span {
-    display: block;
-  }
-  .footer-bottom .copyright span::after {
-    display: none;
-  }
-}
