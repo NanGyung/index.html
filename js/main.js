@@ -5,8 +5,8 @@
 	"use strict";
 
 	var cfg = {		
-		defAnimation   : "fadeInUp",    // default css animation		
-		scrollDuration : 800,           // smoothscroll duration
+		defAnimation   : "fadeInUp",    		
+		scrollDuration : 800,          
 		mailChimpURL   : 'https://facebook.us8.list-manage.com/subscribe/post?u=cdb7b577e41181934ed6a6a44&amp;id=e6957d85dc'
 	},	
 
@@ -23,13 +23,13 @@
 
 		$WIN.on('load', function() {	
 
-			// force page scroll position to top at page refresh
+			
 			$('html, body').animate({ scrollTop: 0 }, 'normal');
 
-	      // will first fade out the loading animation 
+	   
 	    	$("#loader").fadeOut("slow", function(){
 
-	        // will fade out the whole DIV that covers the website.
+	       
 	        $("#preloader").delay(300).fadeOut("slow");
 
 	      }); 
@@ -334,17 +334,6 @@
 		   url: cfg.mailChimpURL
 		});
 
-		// Mailchimp translation
-		//
-		//  Defaults:
-		//	 'submit': 'Submitting...',
-		//  0: 'We have sent you a confirmation email',
-		//  1: 'Please enter a value',
-		//  2: 'An email address must contain a single @',
-		//  3: 'The domain portion of the email address is invalid (the portion after the @: )',
-		//  4: 'The username portion of the email address is invalid (the portion before the @: )',
-		//  5: 'This email address looks fake or invalid. Please enter a real email address'
-
 		$.ajaxChimp.translations.es = {
 		  'submit': 'Submitting...',
 		  0: '<i class="fa fa-check"></i> We have sent you a confirmation email',
@@ -361,10 +350,10 @@
   
 	var ssBackToTop = function() {
 
-		var pxShow  = 500,         // height on which the button will show
-		fadeInTime  = 400,         // how slow/fast you want the button to show
-		fadeOutTime = 400,         // how slow/fast you want the button to hide
-		scrollSpeed = 300,         // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
+		var pxShow  = 500,       
+		fadeInTime  = 400,        
+		fadeOutTime = 400,         
+		scrollSpeed = 300,         
 		goTopButton = $("#go-top")
 
 		
